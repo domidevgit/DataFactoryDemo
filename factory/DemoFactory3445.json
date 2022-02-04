@@ -1,0 +1,9 @@
+{
+	"name": "DemoFactory3445",
+	"location": "switzerlandnorth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6b939cbd-dfae-40b0-a5bf-ca8a69deb76b",
+		"tenantId": "078ec3c8-ba5a-4278-a477-831baad16bdd"
+	}
+}
