@@ -15,6 +15,127 @@
 			},
 			"compressionCodec": "snappy"
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "Year",
+				"type": "UTF8"
+			},
+			{
+				"name": "Month",
+				"type": "UTF8"
+			},
+			{
+				"name": "DayofMonth",
+				"type": "UTF8"
+			},
+			{
+				"name": "DayOfWeek",
+				"type": "UTF8"
+			},
+			{
+				"name": "DepTime",
+				"type": "UTF8"
+			},
+			{
+				"name": "CRSDepTime",
+				"type": "UTF8"
+			},
+			{
+				"name": "ArrTime",
+				"type": "UTF8"
+			},
+			{
+				"name": "CRSArrTime",
+				"type": "UTF8"
+			},
+			{
+				"name": "UniqueCarrier",
+				"type": "UTF8"
+			},
+			{
+				"name": "FlightNum",
+				"type": "UTF8"
+			},
+			{
+				"name": "TailNum",
+				"type": "UTF8"
+			},
+			{
+				"name": "ActualElapsedTime",
+				"type": "UTF8"
+			},
+			{
+				"name": "CRSElapsedTime",
+				"type": "UTF8"
+			},
+			{
+				"name": "AirTime",
+				"type": "UTF8"
+			},
+			{
+				"name": "ArrDelay",
+				"type": "UTF8"
+			},
+			{
+				"name": "DepDelay",
+				"type": "UTF8"
+			},
+			{
+				"name": "Origin",
+				"type": "UTF8"
+			},
+			{
+				"name": "Dest",
+				"type": "UTF8"
+			},
+			{
+				"name": "Distance",
+				"type": "UTF8"
+			},
+			{
+				"name": "TaxiIn",
+				"type": "UTF8"
+			},
+			{
+				"name": "TaxiOut",
+				"type": "UTF8"
+			},
+			{
+				"name": "Cancelled",
+				"type": "UTF8"
+			},
+			{
+				"name": "CancellationCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "Diverted",
+				"type": "UTF8"
+			},
+			{
+				"name": "CarrierDelay",
+				"type": "UTF8"
+			},
+			{
+				"name": "WeatherDelay",
+				"type": "UTF8"
+			},
+			{
+				"name": "NASDelay",
+				"type": "UTF8"
+			},
+			{
+				"name": "SecurityDelay",
+				"type": "UTF8"
+			},
+			{
+				"name": "LateAircraftDelay",
+				"type": "UTF8"
+			},
+			{
+				"name": "Date",
+				"type": "UTF8"
+			}
+		]
 	}
 }

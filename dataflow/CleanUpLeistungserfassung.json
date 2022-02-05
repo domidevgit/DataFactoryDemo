@@ -1,35 +1,24 @@
 {
-	"name": "LandingToCleanedLeistungserfassung",
+	"name": "CleanUpLeistungserfassung",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [
 				{
-					"linkedService": {
-						"referenceName": "AzureDataLakeStorage1",
-						"type": "LinkedServiceReference"
-					},
-					"name": "ReadLandingLeistungserfassung"
-				}
-			],
-			"sinks": [
-				{
 					"dataset": {
 						"referenceName": "CleanedLeistungserfassung",
 						"type": "DatasetReference"
 					},
-					"name": "StoreCleanedLeistungserfassung"
+					"name": "source1"
 				}
 			],
+			"sinks": [],
 			"transformations": [
 				{
-					"name": "DropUnusedColumns"
-				},
-				{
-					"name": "Sort1"
+					"name": "Select1"
 				}
 			],
-			"script": "source(output(\n\t\t{_c0} as integer,\n\t\t{Unnamed: 0} as integer,\n\t\tYear as short,\n\t\tMonth as short,\n\t\tDayofMonth as short,\n\t\tDayOfWeek as short,\n\t\tDepTime as double,\n\t\tCRSDepTime as short,\n\t\tArrTime as double,\n\t\tCRSArrTime as short,\n\t\tUniqueCarrier as string,\n\t\tFlightNum as short,\n\t\tTailNum as string,\n\t\tActualElapsedTime as double,\n\t\tCRSElapsedTime as double,\n\t\tAirTime as double,\n\t\tArrDelay as double,\n\t\tDepDelay as double,\n\t\tOrigin as string,\n\t\tDest as string,\n\t\tDistance as short,\n\t\tTaxiIn as double,\n\t\tTaxiOut as double,\n\t\tCancelled as boolean,\n\t\tCancellationCode as boolean,\n\t\tDiverted as boolean,\n\t\tCarrierDelay as double,\n\t\tWeatherDelay as double,\n\t\tNASDelay as double,\n\t\tSecurityDelay as double,\n\t\tLateAircraftDelay as double,\n\t\tDate as date 'yyyy-MM-dd'\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\trowUrlColumn: 'FileSource',\n\tformat: 'delimited',\n\tfileSystem: 'landing',\n\tcolumnDelimiter: ',',\n\tescapeChar: '\\\\',\n\tquoteChar: '\\\"',\n\tcolumnNamesAsHeader: true,\n\twildcardPaths:['General/DIPS/A/**/*.csv']) ~> ReadLandingLeistungserfassung\nReadLandingLeistungserfassung select(mapColumn(\n\t\tYear,\n\t\tMonth,\n\t\tDayofMonth,\n\t\tDayOfWeek,\n\t\tDepTime,\n\t\tCRSDepTime,\n\t\tArrTime,\n\t\tCRSArrTime,\n\t\tUniqueCarrier,\n\t\tFlightNum,\n\t\tTailNum,\n\t\tActualElapsedTime,\n\t\tCRSElapsedTime,\n\t\tAirTime,\n\t\tArrDelay,\n\t\tDepDelay,\n\t\tOrigin,\n\t\tDest,\n\t\tDistance,\n\t\tTaxiIn,\n\t\tTaxiOut,\n\t\tCancelled,\n\t\tCancellationCode,\n\t\tDiverted,\n\t\tCarrierDelay,\n\t\tWeatherDelay,\n\t\tNASDelay,\n\t\tSecurityDelay,\n\t\tLateAircraftDelay,\n\t\tDate,\n\t\tFileSource\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> DropUnusedColumns\nDropUnusedColumns sort(desc(Date, true)) ~> Sort1\nSort1 sink(allowSchemaDrift: true,\n\tvalidateSchema: true,\n\tformat: 'parquet',\n\tumask: 0022,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> StoreCleanedLeistungserfassung"
+			"script": "source(output(\n\t\tYear as string,\n\t\tMonth as string,\n\t\tDayofMonth as string,\n\t\tDayOfWeek as string,\n\t\tDepTime as string,\n\t\tCRSDepTime as string,\n\t\tArrTime as string,\n\t\tCRSArrTime as string,\n\t\tUniqueCarrier as string,\n\t\tFlightNum as string,\n\t\tTailNum as string,\n\t\tActualElapsedTime as string,\n\t\tCRSElapsedTime as string,\n\t\tAirTime as string,\n\t\tArrDelay as string,\n\t\tDepDelay as string,\n\t\tOrigin as string,\n\t\tDest as string,\n\t\tDistance as string,\n\t\tTaxiIn as string,\n\t\tTaxiOut as string,\n\t\tCancelled as string,\n\t\tCancellationCode as string,\n\t\tDiverted as string,\n\t\tCarrierDelay as string,\n\t\tWeatherDelay as string,\n\t\tNASDelay as string,\n\t\tSecurityDelay as string,\n\t\tLateAircraftDelay as string,\n\t\tDate as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet') ~> source1\nsource1 select(skipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1"
 		}
 	}
 }
