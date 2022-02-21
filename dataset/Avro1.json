@@ -14,6 +14,225 @@
 				"fileSystem": "cleaned"
 			}
 		},
-		"schema": {}
+		"schema": {
+			"type": "record",
+			"name": "topLevelRecord",
+			"fields": [
+				{
+					"name": "Year",
+					"type": [
+						"int",
+						"null"
+					]
+				},
+				{
+					"name": "Month",
+					"type": [
+						"int",
+						"null"
+					]
+				},
+				{
+					"name": "DayofMonth",
+					"type": [
+						"int",
+						"null"
+					]
+				},
+				{
+					"name": "DayOfWeek",
+					"type": [
+						"int",
+						"null"
+					]
+				},
+				{
+					"name": "DepTime",
+					"type": [
+						"int",
+						"null"
+					]
+				},
+				{
+					"name": "CRSDepTime",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "ArrTime",
+					"type": [
+						"int",
+						"null"
+					]
+				},
+				{
+					"name": "CRSArrTime",
+					"type": [
+						"int",
+						"null"
+					]
+				},
+				{
+					"name": "UniqueCarrier",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "FlightNum",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "TailNum",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "ActualElapsedTime",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "CRSElapsedTime",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "AirTime",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "ArrDelay",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "DepDelay",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "Origin",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "Dest",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "Distance",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "TaxiIn",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "TaxiOut",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "Cancelled",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "CancellationCode",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "Diverted",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "CarrierDelay",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "WeatherDelay",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "NASDelay",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "SecurityDelay",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "LateAircraftDelay",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				{
+					"name": "Date",
+					"type": [
+						"date",
+						"null"
+					]
+				},
+				{
+					"name": "origin",
+					"type": "string"
+				}
+			]
+		}
 	}
 }
