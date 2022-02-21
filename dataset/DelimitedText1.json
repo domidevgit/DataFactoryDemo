@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "General/DIPS/A",
+				"folderPath": "General/DIPS/A/2008/01/01/",
 				"fileSystem": "landing"
 			},
 			"columnDelimiter": ",",
