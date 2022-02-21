@@ -135,6 +135,10 @@
 			{
 				"name": "Date",
 				"type": "UTF8"
+			},
+			{
+				"name": "FileName",
+				"type": "UTF8"
 			}
 		]
 	}
