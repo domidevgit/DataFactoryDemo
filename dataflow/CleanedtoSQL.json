@@ -1,24 +1,24 @@
 {
-	"name": "CleanUpLeistungserfassung",
+	"name": "CleanedtoSQL",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "CleanedLeistungserfassung",
+						"referenceName": "Avro1",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "ReadCombinedLeistungserfassung"
 				}
 			],
-			"sinks": [],
-			"transformations": [
+			"sinks": [
 				{
-					"name": "Select1"
+					"name": "sink1"
 				}
 			],
-			"script": "source(output(\n\t\tYear as string,\n\t\tMonth as string,\n\t\tDayofMonth as string,\n\t\tDayOfWeek as string,\n\t\tDepTime as string,\n\t\tCRSDepTime as string,\n\t\tArrTime as string,\n\t\tCRSArrTime as string,\n\t\tUniqueCarrier as string,\n\t\tFlightNum as string,\n\t\tTailNum as string,\n\t\tActualElapsedTime as string,\n\t\tCRSElapsedTime as string,\n\t\tAirTime as string,\n\t\tArrDelay as string,\n\t\tDepDelay as string,\n\t\tOrigin as string,\n\t\tDest as string,\n\t\tDistance as string,\n\t\tTaxiIn as string,\n\t\tTaxiOut as string,\n\t\tCancelled as string,\n\t\tCancellationCode as string,\n\t\tDiverted as string,\n\t\tCarrierDelay as string,\n\t\tWeatherDelay as string,\n\t\tNASDelay as string,\n\t\tSecurityDelay as string,\n\t\tLateAircraftDelay as string,\n\t\tDate as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet') ~> source1\nsource1 select(skipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1"
+			"transformations": [],
+			"script": "source(output(\n\t\tYear as integer,\n\t\tMonth as integer,\n\t\tDayofMonth as integer,\n\t\tDayOfWeek as integer,\n\t\tDepTime as integer,\n\t\tCRSDepTime as string,\n\t\tArrTime as integer,\n\t\tCRSArrTime as integer,\n\t\tUniqueCarrier as string,\n\t\tFlightNum as string,\n\t\tTailNum as string,\n\t\tActualElapsedTime as string,\n\t\tCRSElapsedTime as string,\n\t\tAirTime as string,\n\t\tArrDelay as string,\n\t\tDepDelay as string,\n\t\tOrigin as string,\n\t\tDest as string,\n\t\tDistance as string,\n\t\tTaxiIn as string,\n\t\tTaxiOut as string,\n\t\tCancelled as string,\n\t\tCancellationCode as string,\n\t\tDiverted as string,\n\t\tCarrierDelay as string,\n\t\tWeatherDelay as string,\n\t\tNASDelay as string,\n\t\tSecurityDelay as string,\n\t\tLateAircraftDelay as string,\n\t\tDate as date,\n\t\tfileorigin as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\twildcardPaths:['General/Leistungserfassung/*']) ~> ReadCombinedLeistungserfassung\nReadCombinedLeistungserfassung sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
