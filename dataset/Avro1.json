@@ -224,7 +224,7 @@
 				{
 					"name": "Date",
 					"type": [
-						"date",
+						"int",
 						"null"
 					]
 				},
